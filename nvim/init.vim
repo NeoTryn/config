@@ -4,6 +4,7 @@ call plug#begin()
 	Plug 'windwp/nvim-autopairs'
 	Plug 'vim-airline/vim-airline'
 	Plug 'preservim/nerdtree'
+	Plug 'windwp/nvim-ts-autotag'
 call plug#end()
 
 silent! colorscheme cyberdream
@@ -43,7 +44,17 @@ lua << EOF
 	}
 EOF
 
-nnoremap <leader>f : NERDTreeFocus<CR>
+lua << EOF
+	require("nvim-ts-autotag").setup ({
+		opts = {
+			enable_close = true,
+			enable_rename = true,
+			enable_close_on_slash = false
+		}
+	})
+EOF
+
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <C-r> :NERDTreeRefreshRoot<CR>
