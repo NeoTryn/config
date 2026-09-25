@@ -1,14 +1,66 @@
+local dark_amethyst = 0xff0D630
+local deep_space_blue = 0xff18314F
+local dusk_blue = 0xff384E77
+local lavender_grey = 0xff9097C0
+local powder_blue = 0xffA7BBEC
+
 hl.config({
+	general = {
+		border_size = 1,
+		gaps_in = 4,
+		gaps_out = 4,
+		layout = "dwindle",
+		locale = "en_US",
+		no_focus_fallback = true,
+		resize_on_border = true,
+		col = {
+			active_border = powder_blue,
+			inactive_border = dark_amethyst,
+		},
+		snap = {
+			enabled = true,
+		}
+	},
+	decoration = {
+		active_opacity = 0.92,
+		inactive_opacity = 0.8,
+		rounding = 8,
+		rounding_power = 3.0,
+		blur = {
+			enabled = true,
+			size = 2,
+			aurora = {
+			},
+		},
+		shadow = {
+			enabled = true,
+		},
+		glow = {
+			enabled = true,
+			color = powder_blue,
+			color_inactive = dark_amethyst,
+			range = 5,
+			render_power = 2,
+		},
+	},
+	animations = {
+		enabled = true,
+	},
     input = {
         kb_layout = "de",
-
 		follow_mouse = 1,
 	},
 })
 
+hl.monitor({
+	output = "eDP-1",
+	mode = "1920x1080@60",
+	position = "auto"
+})
+
 hl.device({
 	name = "elan050b:00-04f3:31c3-touchpad",
-	enabled = true
+	enabled = true,
 })
 
 hl.bind("SUPER + Q", hl.dsp.exec_cmd("kitty"))
