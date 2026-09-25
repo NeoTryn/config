@@ -27,5 +27,6 @@ vim.lsp.codelens.enable()
 
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
+vim.opt.relativenumber = true
 
 vim.cmd.colorscheme "tokyonight-night"

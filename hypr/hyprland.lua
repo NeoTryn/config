@@ -58,6 +58,21 @@ hl.monitor({
 	position = "auto"
 })
 
+hl.monitor({
+	output = "DP-1",
+	mode = "3840x2160@144",
+	position = "0x0",
+	cm = "auto",
+})
+
+hl.monitor({
+	output = "DP-2",
+	mode = "2560x1440@165",
+	position = "auto-center-left",
+	cm = "auto",
+	transform = 3,
+})
+
 hl.device({
 	name = "elan050b:00-04f3:31c3-touchpad",
 	enabled = true,
@@ -67,7 +82,11 @@ hl.bind("SUPER + Q", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + C", hl.dsp.window.close())
 hl.bind("SUPER + B", hl.dsp.exec_cmd("brave"))
 hl.bind("SUPER + F", hl.dsp.window.fullscreen())
+
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
+
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 hl.bind("SUPER + left", hl.dsp.focus({ direction = "left" }))
 hl.bind("SUPER + right", hl.dsp.focus({ direction = "right" }))
