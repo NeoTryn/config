@@ -1,0 +1,17 @@
+* {
+	font-family: "AdwaitaMono Nerd Font";
+}
+
+window#waybar {
+	background: transparent;	
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+	background-color: #A7BBEC;
+	color: #18314F;
+	margin: 4px 6px;
+	padding: 4px;
+	border-radius: 14px;
+}

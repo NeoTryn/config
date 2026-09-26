@@ -1,0 +1,43 @@
+{
+"position":"top",
+
+"height": 25,
+
+"spacing" : 30,
+
+"modules-left":[
+	"hyprland/workspaces"
+],
+
+"modules-center":[
+	"clock"
+],
+
+"modules-right":[
+	"cpu",
+	"memory",
+	"battery",
+	"network"
+],
+
+"clock": {
+	"interval": 1,
+	"format": "{:%H:%M:%S}",
+	"timezone": "Europe/Vienna"
+},
+
+"cpu": {
+	"format": "CPU {}%"
+},
+
+"memory": {
+	"format": "RAM {}%"
+},
+
+"network":{
+"format-wifi":" {essid}",
+"format-disconnected":"Offline",
+"format-ethernet": "🖧 {essid}"
+}
+
+}

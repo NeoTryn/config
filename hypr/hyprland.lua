@@ -78,6 +78,12 @@ hl.device({
 	enabled = true,
 })
 
+local suppressMaximizeRule = hl.window_rule({
+    name = "suppress-maximize-events",
+    match = { class = ".*" },
+    suppress_event = "maximize",
+ })
+
 hl.bind("SUPER + Q", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + C", hl.dsp.window.close())
 hl.bind("SUPER + B", hl.dsp.exec_cmd("brave"))
