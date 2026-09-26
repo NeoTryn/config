@@ -2,7 +2,8 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin')
 	Plug('folke/tokyonight.nvim')
-
+	Plug('preservim/nerdtree')
+	Plug('windwp/nvim-autopairs')
 vim.call('plug#end')
 
 vim.lsp.config['lua-server'] = {
@@ -21,6 +22,10 @@ vim.keymap.set('i', '<Tab>', function()
 			return '<Tab>'
 	end
 end, { expr = true, desc = 'Accept the current inline completion' })
+
+require("nvim-autopairs").setup {}
+
+vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>', { desc = "Toggle NERDTree" })
 
 vim.lsp.inline_completion.enable()
 vim.lsp.codelens.enable()
