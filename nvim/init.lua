@@ -4,6 +4,7 @@ vim.call('plug#begin')
 	Plug('folke/tokyonight.nvim')
 	Plug('preservim/nerdtree')
 	Plug('windwp/nvim-autopairs')
+	Plug('nvim-treesitter/nvim-treesitter')
 vim.call('plug#end')
 
 vim.lsp.config['lua-server'] = {
@@ -13,9 +14,8 @@ vim.lsp.config['lua-server'] = {
 	root_dir = vim.fs.dirname(vim.fs.find({'.git', '.vim', 'nvim'}, { upward = true })[1]),
 settings = { Lua = { diagnostics = { globals = {'vim', 'hl'} } } },
 }
-
 vim.lsp.enable('lua-server')
-vim.keymap.set('i', '<Tab>', function()
+vim.keymap.set('n', '<C-a>', function()
 
 	if not vim.lsp.inline_completion.get()
 		then
