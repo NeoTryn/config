@@ -50,6 +50,9 @@ hl.config({
         kb_layout = "de",
 		follow_mouse = 1,
 	},
+	xwayland = {
+		force_zero_scaling = true,
+	}
 })
 
 hl.monitor({
