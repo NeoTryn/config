@@ -6,7 +6,7 @@
 "spacing" : 30,
 
 "modules-left":[
-	"hyprland/workspaces"
+	"hyprland/window"
 ],
 
 "modules-center":[
@@ -35,9 +35,15 @@
 },
 
 "network":{
-"format-wifi":" {essid}",
+"format-wifi":"  {essid}",
 "format-disconnected":"Offline",
-"format-ethernet": "🖧 {essid}"
+"format-ethernet": "🖧   {essid}"
+},
+
+"tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "show-passive-items": true
 }
 
 }

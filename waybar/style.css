@@ -9,9 +9,10 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-	background-color: #A7BBEC;
-	color: #18314F;
+	background-color: #18314F;
+	color: #A7BBEC;
 	margin: 4px 6px;
-	padding: 2px 4px;
+	padding: 6px 6px;
 	border-radius: 14px;
+	border: 2px solid #A7BBEC;
 }
