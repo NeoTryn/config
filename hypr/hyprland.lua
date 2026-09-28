@@ -90,7 +90,7 @@ local suppressMaximizeRule = hl.window_rule({
 hl.bind("SUPER + Q", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + C", hl.dsp.window.close())
 hl.bind("SUPER + B", hl.dsp.exec_cmd("brave"))
-hl.bind("SUPER + F", hl.dsp.window.fullscreen())
+hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle"}))
 
 hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
 
