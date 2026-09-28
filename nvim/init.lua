@@ -35,3 +35,10 @@ vim.opt.tabstop = 4
 vim.opt.relativenumber = true
 
 vim.cmd.colorscheme "tokyonight-night"
+
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = 'typst',
+	callback = function()
+		vim.opt.backupcopy = "yes"
+	end,
+})
