@@ -41,7 +41,7 @@
 },
 
 "battery": {
-	"format": "Battery: {capacity}%"
+	"format": "BAT {capacity}%"
 }
 
 }
