@@ -104,5 +104,5 @@ hl.bind("SUPER + up", hl.dsp.focus({ direction = "up" }))
 hl.bind("SUPER + down", hl.dsp.focus({ direction = "down" }))
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("waybar & hyprpaper")
+	hl.exec_cmd("hyprsunset & waybar & hyprpaper")
 end)
