@@ -12,23 +12,27 @@ vim.lsp.config['lua-server'] = {
     cmd = { 'lua-language-server' },
     filetypes = { 'lua' },
 	root_dir = vim.fs.dirname(vim.fs.find({'.git', '.vim', 'nvim'}, { upward = true })[1]),
-settings = { Lua = { diagnostics = { globals = {'vim', 'hl'} } } },
+    settings = { Lua = { diagnostics = { globals = {'vim', 'hl'} } } },
 }
-vim.lsp.enable('lua-server')
-vim.keymap.set('n', '<C-a>', function()
 
-	if not vim.lsp.inline_completion.get()
-		then
-			return '<Tab>'
+vim.lsp.enable('lua-server')
+vim.lsp.codelens.enable()
+
+vim.api.nvim_create_autocmd('LspAttach', {
+	callback = function(ev)
+		local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
+
+		vim.lsp.completion.enable(true, client.id, ev.buf, {autotrigger = false})
 	end
+})
+vim.lsp.
+vim.keymap.set('i', '<c-space>', function()
+	vim.lsp.completion.get()
 end, { expr = true, desc = 'Accept the current inline completion' })
 
 require("nvim-autopairs").setup {}
 
 vim.keymap.set('n', '<C-n>', ':NERDTreeToggle<CR>', { desc = "Toggle NERDTree" })
-
-vim.lsp.inline_completion.enable()
-vim.lsp.codelens.enable()
 
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
@@ -42,3 +46,6 @@ vim.api.nvim_create_autocmd('FileType', {
 		vim.opt.backupcopy = "yes"
 	end,
 })
+
+
+
