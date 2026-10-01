@@ -5,6 +5,7 @@ vim.call('plug#begin')
 	Plug('preservim/nerdtree')
 	Plug('windwp/nvim-autopairs')
 	Plug('nvim-treesitter/nvim-treesitter')
+	Plug('vim-airline/vim-airline')
 vim.call('plug#end')
 
 vim.lsp.config['lua-server'] = {
