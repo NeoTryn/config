@@ -15,7 +15,15 @@ vim.lsp.config['lua-server'] = {
     settings = { Lua = { diagnostics = { globals = {'vim', 'hl'} } } },
 }
 
+vim.lsp.config['typst-server'] = {
+
+	cmd = {'tinymist'},
+	filetyps = { 'typst' },
+	root_dir = vim.fs.dirname(vim.fs.find({'.git'}, { upward = true})[1]),
+}
+
 vim.lsp.enable('lua-server')
+vim.lsp.enable('typst-server')
 vim.lsp.codelens.enable()
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -25,7 +33,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		vim.lsp.completion.enable(true, client.id, ev.buf, {autotrigger = false})
 	end
 })
-vim.lsp.
+
+vim.opt.completeopt = {
+	"menu",
+	"menuone",
+	"noselect",
+}
+
 vim.keymap.set('i', '<c-space>', function()
 	vim.lsp.completion.get()
 end, { expr = true, desc = 'Accept the current inline completion' })
@@ -46,6 +60,3 @@ vim.api.nvim_create_autocmd('FileType', {
 		vim.opt.backupcopy = "yes"
 	end,
 })
-
-
-

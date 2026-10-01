@@ -43,6 +43,9 @@ hl.config({
 			render_power = 2,
 		},
 	},
+	misc = {
+		disable_hyprland_logo = true,
+	},
 	animations = {
 		enabled = true,
 	},
